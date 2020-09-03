@@ -50,7 +50,7 @@ app.delete("/repositories/:id", (request, response) => {
   const repositorieIndex = repositories.findIndex(repositorie => repositorie.id === id);
 
   if (repositorieIndex < 0) {
-    return response.status(400).json('Repositório não encontrado!');
+    return response.status(400).json({ error: 'Repositorie not found.' });
   }
 
   repositories.splice(repositorieIndex, 1);
